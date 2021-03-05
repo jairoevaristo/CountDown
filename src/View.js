@@ -1,12 +1,13 @@
 const View = {
-  render() {
-    const timerView = document.querySelector(".timer");
+  render({ minutes, seconds }) {
+    const timerView = document.getElementById("timer");
 
     timerView.innerHTML = ` 
       <p>Countdown</p>
-      <span>10:00</span>
-    `
-  }
+      <span>${minutes}:${seconds}</span>
+    `;
+  },
+
 };
 
 export { View };

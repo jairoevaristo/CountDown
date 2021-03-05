@@ -1,10 +1,11 @@
 import Notify from './Notify.js';
 import { Timer } from './Timer.js';
+import { View } from './View.js';
 
 const App = {
   async start() {
     try {
-      Timer.init();
+      Timer.init(26 * 60);
       // await Notify.init();
       // Notify.notify({
       //   title: "Chegou a hora de ler a biblia",

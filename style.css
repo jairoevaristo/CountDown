@@ -21,25 +21,29 @@ body {
   background-color: #000;
 }
 
-.time {
+#timer {
   background-color: #1e1e1e;
-  border-radius: 4px;
+  border-radius: 5px;
   
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  padding: 0.8rem 1.2rem;
+  padding: 1.2rem 1.8rem;
 }
 
-.time p {
-  font-size: 3.2rem;
+#timer p {
+  font-size: 3.5rem;
   font-weight: 400;
   color: #fff;
+
+  padding-bottom: .8rem;
+
+  border-bottom: solid 2px #333;
 }
 
-.time span {
-  font-size: 4.2rem;
+#timer span {
+  font-size: 5.2rem;
   font-weight: 600;
   color: #fff;
 }

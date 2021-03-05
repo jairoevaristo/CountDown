@@ -1,21 +1,31 @@
+import { View } from './View.js'
+
 const Timer = {
   time: 0.1 * 60,
   currentTime: 0,
   timeInterval: null,
 
-  init() {
-    Timer.currentTime = Timer.time;
+  timeToMinutes: time => Math.floor(time / 60), 
+  timeToSeconds: time => Math.floor(time % 60), 
+
+  formatTimer: time => String(time).padStart(2, '0'), 
+
+  init(time) {
+    Timer.currentTime = time || Timer.time;
     Timer.timeInterval = setInterval(Timer.countdown, 1000);
   },
 
   countdown() {
     Timer.currentTime = Timer.currentTime - 1;
-    console.log(Timer.currentTime);
+
+    const minutes = Timer.formatTimer(Timer.timeToMinutes(Timer.currentTime));
+    const seconds = Timer.formatTimer(Timer.timeToSeconds(Timer.currentTime));
 
     if (Timer.currentTime === 0) {
       clearInterval(Timer.timeInterval);
-      return;
     }
+
+    View.render({ minutes, seconds });
   },
 
 };
