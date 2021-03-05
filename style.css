@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+}
+
+body, input, button, textarea {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #000;
+}
+
+.time {
+  background-color: #1e1e1e;
+  border-radius: 4px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0.8rem 1.2rem;
+}
+
+.time p {
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.time span {
+  font-size: 4.2rem;
+  font-weight: 600;
+  color: #fff;
+}
