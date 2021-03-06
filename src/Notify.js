@@ -1,11 +1,11 @@
-class Notify {
+const Notify = {
   async init() {
     const permission = await Notification.requestPermission();
 
     if (permission !== 'granted' ) {
       throw new Error("Not Permission");
     }
-  }
+  },
 
   notify({ title, body, icon }) {
     new Notification(title, {
@@ -15,4 +15,4 @@ class Notify {
   }
 }
 
-export default new Notify();
+export { Notify };

@@ -1,4 +1,5 @@
 import { View } from './View.js'
+import { Notify } from './Notify.js'
 
 const Timer = {
   time: 0.1 * 60,
@@ -15,7 +16,7 @@ const Timer = {
     Timer.timeInterval = setInterval(Timer.countdown, 1000);
   },
 
-  countdown() {
+  async countdown() {
     Timer.currentTime = Timer.currentTime - 1;
 
     const minutes = Timer.formatTimer(Timer.timeToMinutes(Timer.currentTime));
@@ -23,6 +24,11 @@ const Timer = {
 
     if (Timer.currentTime === 0) {
       clearInterval(Timer.timeInterval);
+      Notify.notify({
+        title: "Chegou a hora de ler a biblia",
+        body: "Leia a biblia para alimentar o espirito, Mt 09:22",
+        icon: "/assets/notification.png"
+      });
     }
 
     View.render({ minutes, seconds });
