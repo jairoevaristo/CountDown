@@ -1,8 +1,8 @@
 import { View } from './View.js'
-import { Notify } from './Notify.js'
+import { Emmiter } from './Emmiter.js';
 
 const Timer = {
-  time: 0.1 * 60,
+  time: 26 * 60,
   currentTime: 0,
   timeInterval: null,
 
@@ -12,6 +12,7 @@ const Timer = {
   formatTimer: time => String(time).padStart(2, '0'), 
 
   init(time) {
+    Emmiter.emmit('countdown-start');
     Timer.currentTime = time || Timer.time;
     Timer.timeInterval = setInterval(Timer.countdown, 1000);
   },
@@ -24,11 +25,7 @@ const Timer = {
 
     if (Timer.currentTime === 0) {
       clearInterval(Timer.timeInterval);
-      Notify.notify({
-        title: "Chegou a hora de ler a biblia",
-        body: "Leia a biblia para alimentar o espirito, Mt 09:22",
-        icon: "/assets/notification.png"
-      });
+      Emmiter.emmit('countdown-end');
     }
 
     View.render({ minutes, seconds });
