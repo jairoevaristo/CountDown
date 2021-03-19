@@ -22,14 +22,9 @@ body {
 }
 
 #timer {
-  background-color: #1e1e1e;
-  border-radius: 5px;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding: 1.2rem 1.8rem;
 }
 
 #timer p {
