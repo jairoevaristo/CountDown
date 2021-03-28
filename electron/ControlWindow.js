@@ -8,9 +8,9 @@ function controlWindow(win, tray) {
   }
 
   function show() {
-    // const { x, y } = getPosition();
+    const { x, y } = getPosition();
 
-    // win.setPosition(x, y, false);
+    win.setPosition(x, y);
     
     win.show();
     win.focus();
@@ -21,7 +21,7 @@ function controlWindow(win, tray) {
     const trayBounds = tray.getBounds();
 
     const x = Math.round(trayBounds.x + (trayBounds.width / 2) - (winBounds.width / 2));
-    const y = Math.round(trayBounds.y + trayBounds.height + 3);
+    const y = Math.round(trayBounds.y - winBounds.height + 3);
 
     return { x, y };
 
