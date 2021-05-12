@@ -12,7 +12,7 @@ to remind him to do something.
 
 ## Tech's
 
-  - **ElectronJS** :large_blue_circle:.
+  - **ElectronJS** 🛠️.
 
 ## Get started
 
